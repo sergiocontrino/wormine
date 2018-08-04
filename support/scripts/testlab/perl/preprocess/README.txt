@@ -1,3 +1,0 @@
-These scripts preprocess data for the named data source.  Must be run prior to loading.
-
-wormbase ace XML must be purified in addition to preprocessing.  At: ../purify_xace/....
