@@ -23,7 +23,7 @@ dependencies {
 }
 
 dbModelConfig {
-    mineName = "${mineInstanceName}"
+    mineName = "wormmine"
     objectStoreName = "os.production"
     modelName = "genomic"
     defaultInterminePropertiesFile = "default.intermine.production.properties"

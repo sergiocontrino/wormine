@@ -58,7 +58,7 @@ gretty {
 }
 
 webappConfig {
-    mineName = "${mineInstanceName}"
+    mineName = "wormmine"
     objectStoreName = "os.production"
     userProfileObjectStoreName = "os.userprofile-production"
     userProfileObjectStoreWriterName = "osw.userprofile-production"
@@ -66,9 +66,9 @@ webappConfig {
     propsDir = "$mergePropsDir"
 }
 
-// -------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Use cargo to deploy the webapp to an existing Tomcat instance, either via the HTTP Tomcat manager or local file copy.
-// -------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 cargo {
 
     // change this to match your Tomcat major version (keep the x)
@@ -143,4 +143,7 @@ task blueGenesStart(type: JavaExec) {
     // FlyMine Beta
     environment("bluegenes-default-mine-name", props.getProperty("project.title"))
     environment("bluegenes-jar-version", System.getProperty("blueGenesVersion"))
+    // absolute path to npm tools, e.g. /intermine/tools/node_modules/
+    environment("bluegenes-tool-path", props.getProperty("bluegenes.toolLocation"))
+    println "Loading tools from " + props.getProperty("bluegenes.toolLocation")
 }
